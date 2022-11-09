@@ -1,5 +1,5 @@
 {
-    "name": "가속도계-송신",
+    "name": "accel_sender",
     "description": "",
     "dependencies": {
         "core": "*",

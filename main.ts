@@ -1,10 +1,10 @@
-let acc = 0
 radio.setGroup(1)
-basic.showString("Hello!")
-music.playMelody("C5 E6 G6", 200)
+basic.showIcon(IconNames.Yes)
+music.playMelody("C6 E6 G6", 200)
 basic.forever(function on_forever() {
-    
-    acc = input.acceleration(Dimension.Z)
-    acc = Math.round(Math.map(acc, 0, 1023, 0, 98)) / 10
-    radio.sendNumber(acc)
+    // global acc
+    // acc = input.acceleration(Dimension.Z)
+    // acc =  / 10
+    // Math.sqrt(input.acceleration(Dimension.Z)*input.acceleration(Dimension.Z)+input.acceleration(Dimension.Z)*input.acceleration(Dimension.Z))
+    radio.sendNumber(Math.round(Math.map(Math.sqrt(input.acceleration(Dimension.Z) * input.acceleration(Dimension.Z) + input.acceleration(Dimension.Z) * input.acceleration(Dimension.Z)), -1023, 1023, -980, 980)))
 })
